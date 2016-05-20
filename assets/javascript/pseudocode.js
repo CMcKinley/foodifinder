@@ -27,7 +27,6 @@ function getNutrition(searchTerm){
     console.log(response.hits[0].fields.item_id);
     
     var searchFood = response.hits[0].fields.item_id;
-
     
    }); // end $.ajax(request).done(function(response)
 

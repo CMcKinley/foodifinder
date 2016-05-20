@@ -11,6 +11,8 @@ function getPinterest(searchTerm){
 //John's code will go in here
 function getNutrition(searchTerm){
 
+
+
 } 
 //This code will take the search term, pass it into the search query  to search for nutrition facts to then grab from the response and dynamically update to the screen with jquery
 

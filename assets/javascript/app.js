@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-$('.login').on('click', function(){
+$('body').on('click', '#login', function(){
 
 	var provider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -13,7 +13,7 @@ $('.login').on('click', function(){
 		firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 
-		$('body').text('Logged in!')
+		$('#auth').html('<a class="waves-effect waves-light btn" id="logout">Logout</a>')
 			} else {
 			// No user is signed in.
 			}
@@ -34,11 +34,11 @@ $('.login').on('click', function(){
 
 });
 
-$('body').on('click', '.logout', function(){
+$('body').on('click', '#logout', function(){
 
 
 	firebase.auth().signOut().then(function() {
-	  // Sign-out successful.
+	  $('#auth').html('<a class="waves-effect waves-light btn" id="login">Login</a>')
 	}, function(error) {
 	  // An error happened.
 	});

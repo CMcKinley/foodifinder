@@ -16,3 +16,8 @@
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
+
+#map{
+  height: 550px;
+  width:80%;
+}

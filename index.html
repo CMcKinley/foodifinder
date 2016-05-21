@@ -8,6 +8,7 @@
   	<!-- materialize JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcXdEYl7DcSYA7n2Rgzc__bpMBBSw_P0g"async defer></script>
 	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
      <script>
@@ -20,8 +21,10 @@
 		};
 		firebase.initializeApp(config);
 	</script>
+
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	
 </head>
 
 <body>
@@ -33,6 +36,7 @@
     <div class="nav-wrapper">
       <ul class="right hide-on-med-and-down">
         <li id="auth"><a class="waves-effect waves-light btn" id="login">Login</a></li>
+        <a class="waves-effect waves-light btn" id="mark">Mark</a>
       </ul>
     </div>
   </nav>
@@ -80,7 +84,7 @@
 <div class="container recipefacts">
    <div class="row">
    	<!--recipe div-->
-      <div id="recipe" class="col s9 push-s3"><span class="flow-text">Recipe will go hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span></div>
+      <div id="map" class="col s9 push-s3" ><span class="flow-text">Recipe will go hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span></div>
 	<!--Nutrition Facts div-->
       <div id="facts" class="col s3 pull-s9"><span class="flow-text">Nutrition Facts go here</span></div>
     </div>

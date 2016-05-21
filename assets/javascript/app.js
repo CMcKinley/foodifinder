@@ -12,8 +12,10 @@ function renderTrending(){
 	//renders trending buttons
 }
 
-function renderSuggested(){
+function renderSuggested(appRef, userRef, userid){
 	//renders suggested recipes based off users last searched
+	var lastSearch = userRef.searched
+	//need to call api functions and jquery recipes
 }
 
 

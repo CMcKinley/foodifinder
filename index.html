@@ -14,14 +14,14 @@
 </head>
 
 <body>
-<p> hello this is a change </p>
+
 
 
 <!--Begin nav-->
  <nav class="grey darken-4">
     <div class="nav-wrapper">
-      <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn">Login</a></li>
+      <ul class="right">
+        <li id="auth"><a class="waves-effect waves-light btn">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -37,27 +37,34 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
+
         <!--Main text-->
         <h1 class="header center teal-text text-lighten-2">FoodiFinder</h1>
         <div class="row center">
           <h5 class="header col s12 light">An app for you to find recipes and nutrition facts</h5>
         </div>
-        <!--main button-->
-        <div class="row center">
-    		<form class="col s12">
-      			<div class="row">
+
+    <!--form with main button and input field-->
+    <form class="col s12">
+        	<div class="row center">
+    			<div class="row">
+    				<!--Input field-->
         			<div class="input-field col s4 offset-s4">
           				<input id="user_food" type="text" class="validate center" placeholder="Type a food here">
         			</div>
       			</div>
-    		</form>
-  		</div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div>
+  			</div>
+        	<div class="row center">
+        		<!--Submit Button-->
+          		<input type="submit" value="Submit" class="btn-large waves-effect waves-light teal lighten-1"></input>
+        	</div>
         <br><br>
-      </div>
+
+     </div>
     </div>
+    </form>
+
+
     <!--background image-->
     <div class="parallax"><img src="assets/images/food.jpg" alt="Unsplashed background img 1"></div>
   </div>
@@ -65,13 +72,30 @@
 
 
 
-<!--Nutrition Facts and Recipe divs-->
-<div class="container recipefacts">
-   <div class="row">
-   	<!--recipe div-->
-      <div id="recipe" class="col s9 push-s3"><span class="flow-text">Recipe will go hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span></div>
-	<!--Nutrition Facts div-->
-      <div id="facts" class="col s3 pull-s9"><span class="flow-text">Nutrition Facts go here</span></div>
+<!--Nutrition Facts and Map divs-->
+<div class="container foodfacts">
+    <div class="row">
+
+    	<!--facts column-->
+      	<div class="col s3">
+      		<div class="row">
+      			<h4>Nutrition Facts</h4>
+      		</div>
+      		<!--empty facts div-->
+      		<div id="facts" class="facts"></div>
+      	</div>
+
+      	<!--map column-->
+     	<div class="col s9">
+     		<div class="row">
+     			<h4 class="left">Food Map </h4>
+     			<!--mark button-->
+     			<button type="submit" id="mark" class="right btn-large waves-effect waves-light teal lighten-1">Add Pin!</button>
+     		</div>
+     			<!--empty map div-->
+      			<div id="map" class="map"></div>
+     	</div>
+
     </div>
 </div>
 

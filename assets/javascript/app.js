@@ -167,7 +167,7 @@ $('.search').on('click', function(){
 	
 	app.searchTerm = $('.input').val.trim();
 	
-	getNutrition(searchTerm);
+	app.getNutrition(app.searchTerm);
 });
 
 

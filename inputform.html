@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Input Form Page</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- materialize CSS -->
+ 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+ 	 <!-- materialize JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+
+<body>
+
+		<header id="masthead">
+		<div class="container">
+			
+			<h2><a href="index.html" id="logo"<h2>FoodiFinder</h2></a>
+			
+				
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="main section">
+			<h5>Input and submit your food choice here</h5>
+			</br>
+
+			<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+Food Choice: <input type="text" name="fname" cols="20" rows="3" style="border:3px solid #66c2ff;">
+<input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>

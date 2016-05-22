@@ -26,11 +26,14 @@
 	</header>
 
 	<main class="container">
-		<section class="main-section">
+		<section class="main section">
 			<h5>Input and submit your food choice here</h5>
 			</br>
 
-			
+			<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+Food Choice: <input type="text" name="fname" cols="20" rows="3" style="border:3px solid #66c2ff;">
+<input type="submit" value="Submit">
+</form>
 
 
 </body>

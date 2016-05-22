@@ -26,6 +26,12 @@
   background-color: #cccccc;
 }
 
+#map{
+  height: 550px;
+  width:80%;
+}
+
+
 
 /* John's Nutrition Table and Associated CSS */
 
@@ -115,3 +121,4 @@
   margin-bottom: 0;
 }
 /* end John's Nutrition CSS */
+

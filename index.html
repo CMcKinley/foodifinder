@@ -16,7 +16,6 @@
 <body>
 <p> hello this is a change </p>
 
-
 <!--Begin nav-->
  <nav class="grey darken-4">
     <div class="nav-wrapper">
@@ -27,10 +26,7 @@
   </nav>
  <!--End nav-->
 
-
-
 <div id="main"><!--wrapping content between nav and footer with the "main" div-->
-
 
 <!--top banner section-->
    <div id="index-banner" class="parallax-container">
@@ -52,17 +48,75 @@
       			</div>
     		</form>
   		</div>
-        <div class="row center">
-          <a href="inputform.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a> 
-        </div>
-        <br><br>
-      </div>
+    
+
+<apex:page standardController="Account" showHeader="True" sidebar="false" tabStyle="Account" >
+
+  <script type="text/javascript">
+
+  var ALERT_TITLE = "Oops!";
+  var ALERT_BUTTON_TEXT = "Ok";
+
+    if(document.getElementById) {
+      window.alert = function(txt) {
+        createCustomAlert(txt);
+    }
+}
+
+    function createCustomAlert(txt) {
+    d = document;
+
+    if(d.getElementById("modalContainer")) return;
+
+    mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+    mObj.id = "modalContainer";
+    mObj.style.height = d.documentElement.scrollHeight + "px";
+    
+    alertObj = mObj.appendChild(d.createElement("div"));
+    alertObj.id = "alertBox";
+    if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+    alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+    alertObj.style.visiblity="visible";
+
+    h1 = alertObj.appendChild(d.createElement("h1"));
+    h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+    msg = alertObj.appendChild(d.createElement("p"));
+    //msg.appendChild(d.createTextNode(txt));
+    msg.innerHTML = txt;
+
+    btn = alertObj.appendChild(d.createElement("a"));
+    btn.id = "closeBtn";
+    btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+    btn.href = "#";
+    btn.focus();
+    btn.onclick = function() { removeCustomAlert();return false; }
+
+    alertObj.style.display = "block";
+    
+}
+
+function removeCustomAlert() {
+    document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+}
+</script>
+</apex:page>
+
+    <div id = "section">
+        <p><h6>Input and submit your food choice here:</h6></p>
+      </br>
+
+        <form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+            <input type="text" name="fname" cols="s6" rows="2" style="border:3px solid #00b3b3;">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+        <!--<br><br>-->
+    </div>
     </div>
     <!--background image-->
     <div class="parallax"><img src="assets/images/food.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
-
+    </div>
 
 <!--Nutrition Facts and Recipe divs-->
 <div class="container recipefacts">

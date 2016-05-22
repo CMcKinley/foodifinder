@@ -12,11 +12,19 @@
 	background-color: #cccccc;
 }
 
-.recipefacts {
-	padding-top: 100px;
-	padding-bottom: 100px;
+.foodfacts {
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
+.facts {
+  background-color: #cccccc;
+
+}
+
+.map {
+  background-color: #cccccc;
+}
 
 
 /* John's Nutrition Table and Associated CSS */

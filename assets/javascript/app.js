@@ -5,6 +5,7 @@ var app = {
 	user:undefined,
 	lat:undefined,
 	long:undefined,
+	search: undefined,
 	appRef: new Firebase('https://foodifinder.firebaseio.com/'),
 	searchTerm:undefined,
 	login: function(){
@@ -135,7 +136,8 @@ app.appRef.on("child_added", function(snapshot){
 
 
 $('#mark').on('click', function(){
-	if (app.user){
+	if(app.search){
+		if (app.user){
 		app.mark(app.user.displayName,app.lat,app.long);
 		app.appRef.push({username:app.user.displayName,
 					  lat:app.lat,
@@ -145,6 +147,7 @@ $('#mark').on('click', function(){
 	else{
 		app.login();
 		}
+	}
 })
 
 //click function logs  user in with google
@@ -163,11 +166,21 @@ $('body').on('click', '#logout', function(){
 });
 
 //click function runs search and stores user search
-$('.search').on('click', function(){
+$('#search').on('click', function(e){
+	e.preventDefault();
+	if (app.user){
+
+		app.searchTerm = $('#user_food').val().trim();
 	
-	app.searchTerm = $('.input').val.trim();
+		app.getNutrition(app.searchTerm);
+		app.search = true;
+		}
+	else{
+		app.login();
+		}
 	
-	app.getNutrition(app.searchTerm);
+	
+	return false;
 });
 
 
@@ -181,4 +194,3 @@ $('.search').on('click', function(){
 
 
 });
-

@@ -17,10 +17,16 @@ h5.subhead {
   font-family: 'Roboto', sans-serif;
 }
 
+#auth {
+  background: transparent;
+}
+
 /* want to replace background color with image...*/
-.parallax-container {
-  background-color: #eeeeee;
-  /*background: url('assets/images/food.jpg')*/
+.bkgrd {
+/*background-color: #cccccc;*/
+  background: url('../images/food.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 

@@ -6,31 +6,43 @@
 
 #main {
     flex: 1 0 auto;
+    font-family: 'Roboto', sans-serif;
   }
 
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
+h1, h2, h3, h4, h5, .txtbtn {
+  font-family: 'Roboto Condensed', sans-serif;
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+
+h5.subhead {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* want to replace background color with image...*/
+.parallax-container {
+  background-color: #eeeeee;
+  /*background: url('assets/images/food.jpg')*/
+}
+
 
 .foodfacts {
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
 
+/*
 .facts {
   background-color: #cccccc;
 
 }
 
 .map {
-  background-color: teal;
+  background-color: #cccccc;
+}
+*/
+
+input[type=text] {
+  background-color: white;
+  border-style: none;
 }
 
 

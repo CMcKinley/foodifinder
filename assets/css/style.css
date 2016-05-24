@@ -8,9 +8,16 @@
     flex: 1 0 auto;
   }
 
+
 .parallax-container {
-	background-color: #cccccc;
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
 }
+  .parallax-container .section {
+    width: 100%;
+  }
 
 .foodfacts {
 	padding-top: 50px;
@@ -23,7 +30,7 @@
 }
 
 .map {
-  background-color: #cccccc;
+  background-color: teal;
 }
 
 

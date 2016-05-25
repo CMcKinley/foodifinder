@@ -22,7 +22,7 @@ var app = {
 		firebase.auth().onAuthStateChanged(function(user) {
 		if (app.user) {
 			userid = app.user.uid
-		$('#auth').html('<a class="waves-effect waves-light btn" id="logout">Logout</a>')
+		$('#auth').html('<a class="waves-effect waves-light btn txtbtn red darken-4" id="logout">Logout</a>')
 			} else {
 			userid = null;
 			}
@@ -41,7 +41,7 @@ var app = {
 	  var credential = error.credential;
 	  // ...
 	});
-	$('form').html('<div class="row center"><div class="row"><div class="input-field col s4 offset-s4"><input id="user_food" type="text" class="validate center" placeholder="Type a food here"></div></div></div><div class="row center"><input type="submit" value="Submit" class="btn-large waves-effect waves-light teal lighten-1" id="search"></input></div><br><br></div></div>');
+	$('form').html('<div class="row center"><div class="input-field col l4 push-l4 m8 push-m2 s10 push-s1"><input id="user_food" type="text" class="validate" required="" aria-required="true"><label for="user_food">Search</label></div><div class="input-field col s12"><button id="search" class="waves-effect waves-light btn-large txtbtn red darken-4" type="submit" name="action" value="Submit">Submit</button></div></div>');
 
 
 
@@ -83,7 +83,7 @@ var app = {
 		    
 		    console.log(response.hits[0].fields.item_name);
 
-		        $('#facts').html('');
+		        $('#facts').empty();
 		        $('#facts').append('<div id="nutritionTable"></div>');
 		        $('#nutritionTable').append('<p id="nutH1">Nutrition Facts</p>');
 		        $('#nutritionTable').append('<p id="nutH2">'+response.hits[i].fields.item_name+'<p>');
@@ -162,7 +162,8 @@ $('body').on('click', '#login', function(){
 //click function logs user out
 $('body').on('click', '#logout', function(){
 	firebase.auth().signOut().then(function() {
-	  $('#auth').html('<a class="waves-effect waves-light btn" id="login">Login</a>')
+	  $('form').html('<div class="row center"><ul><li id="auth"><a class="waves-effect waves-light btn-large txtbtn red darken-4" id="login">Login</a></li></ul></div><br><br>');
+	  $('#auth').empty();
 	  app.user = null;
 	}, function(error) {
 	  // An error happened.

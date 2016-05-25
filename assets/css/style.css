@@ -27,12 +27,13 @@ h5.subhead {
   background: url('../images/food.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 50px;
 }
 
 
 .foodfacts {
-	padding-top: 50px;
-	padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /*
@@ -50,12 +51,6 @@ input[type=text] {
   background-color: white;
   border-style: none;
 }
-
-#map{
-  height: 550px;
-  width:80%;
-}
-
 
 
 /* John's Nutrition Table and Associated CSS */
@@ -147,3 +142,11 @@ input[type=text] {
 }
 /* end John's Nutrition CSS */
 
+input {
+ text-align: center;
+}
+
+#map{
+  height: 300px;
+  width:80%;
+}

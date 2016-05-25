@@ -166,7 +166,7 @@ $('body').on('click', '#filter', function(){
 	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
  }
  });
-$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="restore">Restore</a>');
+
 });
 
 $('body').on('click', '#restore', function(){
@@ -178,7 +178,7 @@ for(var i = 0; i < app.markers.length; i++){
 	
 	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
 });
-	$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a>');
+
 });
 
 //click function logs  user in with google
@@ -206,7 +206,7 @@ $('body').on('click','#search', function(e){
 	
 		app.getNutrition(app.searchTerm);
 		app.search = true;
-		$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a>');
+		$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a><a class="waves-effect waves-light btn-large txtbtn red darken-4" id="restore">Restore</a>');
 	}
 	else{
 

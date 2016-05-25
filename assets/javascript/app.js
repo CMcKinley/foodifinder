@@ -174,11 +174,19 @@ $('body').on('click', '#logout', function(){
 $('body').on('click','#search', function(e){
 	e.preventDefault();
 	
-
+		if( $('#user_food').val().trim() ){
 		app.searchTerm = $('#user_food').val().trim();
 	
 		app.getNutrition(app.searchTerm);
 		app.search = true;
+	}
+	else{
+
+
+
+
+	}
+
 	
 	
 	

@@ -8,6 +8,7 @@ var app = {
 	search: undefined,
 	appRef: new Firebase('https://foodifinder.firebaseio.com/'),
 	searchTerm:undefined,
+	markers: [],
 	login: function(){
 	
 	var provider = new firebase.auth.GoogleAuthProvider();
@@ -54,7 +55,7 @@ var app = {
     title: displayName + ' likes ' + item
 
 	});
-	
+	app.markers.push(marker);
 		function toggleBounce() {
 	  if (marker.getAnimation() !== null) {
 	    marker.setAnimation(null);
@@ -152,7 +153,33 @@ $('#mark').on('click', function(){
 		app.login();
 		}
 	}
-})
+});
+
+$('body').on('click', '#filter', function(){
+	for(var i = 0; i < app.markers.length; i++){
+		app.markers[i].setMap(null);
+	}
+	app.markers.length = 0;
+	app.appRef.on("child_added", function(snapshot){
+	
+	if(snapshot.val().item == app.searchTerm){
+	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
+ }
+ });
+$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="restore">Restore</a>');
+});
+
+$('body').on('click', '#restore', function(){
+for(var i = 0; i < app.markers.length; i++){
+		app.markers[i].setMap(null);
+	}
+	app.markers.length = 0;
+	app.appRef.on("child_added", function(snapshot){
+	
+	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
+});
+	$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a>');
+});
 
 //click function logs  user in with google
 $('body').on('click', '#login', function(){
@@ -179,6 +206,7 @@ $('body').on('click','#search', function(e){
 	
 		app.getNutrition(app.searchTerm);
 		app.search = true;
+		$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a>');
 	}
 	else{
 

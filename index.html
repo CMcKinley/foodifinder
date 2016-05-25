@@ -11,7 +11,19 @@
   	<!-- materialize JavaScript -->
   
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcXdEYl7DcSYA7n2Rgzc__bpMBBSw_P0g"async defer></script>
 	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	 <script>
+	// Initialize Firebase
+	var config = {
+	apiKey: "AIzaSyDcXdEYl7DcSYA7n2Rgzc__bpMBBSw_P0g",
+	authDomain: "foodifinder.firebaseapp.com",
+	databaseURL: "https://foodifinder.firebaseio.com",
+	storageBucket: "foodifinder.appspot.com",
+	};
+	firebase.initializeApp(config);
+	</script>
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
@@ -25,7 +37,9 @@
  <nav class="grey darken-4">
     <div class="nav-wrapper">
       <ul class="right">
+
         <li id="auth"><!--<a class="waves-effect waves-light btn txtbtn red darken-4">Login</a>--></li>
+
       </ul>
     </div>
   </nav>
@@ -52,12 +66,14 @@
     <form class="col s12">
         	<div class="row center">
         		<!--Submit Button-->
+
         		<ul>
           		<li id="auth"><a class="waves-effect waves-light btn-large txtbtn red darken-4">Login</a></li>
           		</ul>
         	</div>
         <br><br>
 	 </form>
+
      </div>
     
    

@@ -51,6 +51,12 @@ input[type=text] {
   border-style: none;
 }
 
+#map{
+  height: 550px;
+  width:80%;
+}
+
+
 
 /* John's Nutrition Table and Associated CSS */
 
@@ -140,3 +146,4 @@ input[type=text] {
   margin-bottom: 0;
 }
 /* end John's Nutrition CSS */
+

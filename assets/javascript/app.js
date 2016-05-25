@@ -48,22 +48,26 @@ var app = {
 
 	},
 	mark: function(displayName,lat,long,item){
-	var marker = new google.maps.Marker({
-    position: {lat: lat, lng: long},
-    animation: google.maps.Animation.DROP,
-    map: map,
-    title: displayName + ' likes ' + item
+		var marker = new google.maps.Marker({
+		    position: {lat: lat, lng: long},
+		    animation: google.maps.Animation.DROP,
+		    map: map,
+		    title: displayName + ' likes ' + item
 
-	});
-	app.markers.push(marker);
-		function toggleBounce() {
-	  if (marker.getAnimation() !== null) {
-	    marker.setAnimation(null);
-	  } else {
-	    marker.setAnimation(google.maps.Animation.BOUNCE);
-	  }
-	}
-	marker.addListener('click', toggleBounce);
+		});
+
+		app.markers.push(marker);
+
+			function toggleBounce() {
+
+			  if (marker.getAnimation() !== null) {
+			    marker.setAnimation(null);
+			  } else {
+			    marker.setAnimation(google.maps.Animation.BOUNCE);
+			  }
+
+		}
+		marker.addListener('click', toggleBounce);
 	
 	},
 	getNutrition: function(searchTerm){
@@ -112,9 +116,6 @@ var app = {
 		   }); // end $.ajax(request).done(function(response)
 
 		// end ajax code nutritionix (JR)
-		  
-
-
 	 //$('#nutritionTable').append(<p>'<hr></p>');
 	},
 	getLocationandRenderMap: function(){
@@ -133,12 +134,10 @@ var app = {
 }
 
 app.getLocationandRenderMap();
-
 app.appRef.on("child_added", function(snapshot){
 	console.log(snapshot.val().username);
 	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
 });
-
 
 $('#mark').on('click', function(){
 	if(app.search){
@@ -148,6 +147,7 @@ $('#mark').on('click', function(){
 					  lat:app.lat,
 					  long:app.long,
 					  item: app.searchTerm})
+
 		}
 	else{
 		app.login();
@@ -159,25 +159,26 @@ $('body').on('click', '#filter', function(){
 	for(var i = 0; i < app.markers.length; i++){
 		app.markers[i].setMap(null);
 	}
+	app.appRef.off();
 	app.markers.length = 0;
 	app.appRef.on("child_added", function(snapshot){
 	
-	if(snapshot.val().item == app.searchTerm){
-	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
- }
- });
+		if(snapshot.val().item == app.searchTerm){
+		 app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
+	    }
+   });
 
 });
 
 $('body').on('click', '#restore', function(){
-for(var i = 0; i < app.markers.length; i++){
+	for(var i = 0; i < app.markers.length; i++){
 		app.markers[i].setMap(null);
 	}
 	app.markers.length = 0;
+	app.appRef.off();
 	app.appRef.on("child_added", function(snapshot){
-	
-	app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
-});
+		app.mark(snapshot.val().username,snapshot.val().lat,snapshot.val().long, snapshot.val().item)
+	});
 
 });
 

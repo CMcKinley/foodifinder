@@ -41,6 +41,10 @@ var app = {
 	  var credential = error.credential;
 	  // ...
 	});
+	$('form').html('<div class="row center"><div class="row"><div class="input-field col s4 offset-s4"><input id="user_food" type="text" class="validate center" placeholder="Type a food here"></div></div></div><div class="row center"><input type="submit" value="Submit" class="btn-large waves-effect waves-light teal lighten-1" id="search"></input></div><br><br></div></div>');
+
+
+
 	},
 	mark: function(displayName,lat,long,item){
 	var marker = new google.maps.Marker({
@@ -166,18 +170,15 @@ $('body').on('click', '#logout', function(){
 });
 
 //click function runs search and stores user search
-$('#search').on('click', function(e){
+$('body').on('click','#search', function(e){
 	e.preventDefault();
-	if (app.user){
+	
 
 		app.searchTerm = $('#user_food').val().trim();
 	
 		app.getNutrition(app.searchTerm);
 		app.search = true;
-		}
-	else{
-		app.login();
-		}
+	
 	
 	
 	return false;

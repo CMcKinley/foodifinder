@@ -3,10 +3,13 @@
 <head>
 	<title>FOODiFINDER</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   	<!-- materialize CSS -->
- 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   	<!-- materialize JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcXdEYl7DcSYA7n2Rgzc__bpMBBSw_P0g"async defer></script>
 	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
@@ -22,6 +25,7 @@
 	firebase.initializeApp(config);
 	</script>
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </head>
 
@@ -34,7 +38,7 @@
     <div class="nav-wrapper">
       <ul class="right">
 
-        <li id="auth"><a class="waves-effect waves-light btn" id="login">Login</a></li>
+        <li id="auth"><!--<a class="waves-effect waves-light btn txtbtn red darken-4">Login</a>--></li>
 
       </ul>
     </div>
@@ -47,69 +51,60 @@
 
 
 <!--top banner section-->
-   <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
+   <!--<div id="index-banner" class="headercontainer">
+    <div class="section no-pad-bot">-->
+      <div class="bkgrd">
         <br><br>
 
         <!--Main text-->
-        <h1 class="header center teal-text text-lighten-2">FoodiFinder</h1>
+        <h1 class="header center grey-text">FOODiFINDER</h1>
         <div class="row center">
-          <h5 class="header col s12 light">An app for you to find recipes and nutrition facts</h5>
+          <h5 class="subhead header col s12 light grey-text">Share your location with other food finders</h5>
         </div>
 
     <!--form with main button and input field-->
     <form class="col s12">
         	<div class="row center">
-    			<div class="row">
-    				<!--Input field-->
-        			<div class="input-field col s4 offset-s4">
-          				<input id="user_food" type="text" class="validate center" placeholder="Type a food here">
-        			</div>
-      			</div>
-  			</div>
-        	<div class="row center">
         		<!--Submit Button-->
 
-          		<input type="submit" value="Submit" class="btn-large waves-effect waves-light teal lighten-1" id="search"></input>
-
+        		<ul>
+          		<li id="auth"><a class="waves-effect waves-light btn-large txtbtn red darken-4">Login</a></li>
+          		</ul>
         	</div>
         <br><br>
+	 </form>
 
      </div>
-    </div>
-    </form>
-
-
-    <!--background image-->
-    <div class="parallax"><img src="assets/images/food.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
-
-
+    
+   
+  <!--</div>-->
 
 <!--Nutrition Facts and Map divs-->
 <div class="container foodfacts">
     <div class="row">
 
     	<!--facts column-->
-      	<div class="col s3">
+      	<div class="col s12 m12 l3">
       		<div class="row">
-      			<h4>Nutrition Facts</h4>
+      			<h4>NUTRITION FACTS</h4>
       		</div>
+      		<div class="row">
       		<!--empty facts div-->
       		<div id="facts" class="facts"></div>
+      		</div>
       	</div>
 
       	<!--map column-->
-     	<div class="col s9">
+     	<div class="col s12 m12 l8 push-l1">
      		<div class="row">
-     			<h4 class="left">Food Map </h4>
+     			<h4 class="left">ADD YOUR LOCATION</h4>
      			<!--mark button-->
-     			<button type="submit" id="mark" class="right btn-large waves-effect waves-light teal lighten-1">Add Pin!</button>
+     			<button type="submit" id="mark" class="right btn-floating btn-large waves-effect waves-light red darken-4"><i class="material-icons">add</i></button>
      		</div>
+     			<div class="row">
      			<!--empty map div-->
       			<div id="map" class="map"></div>
+      			</div>
      	</div>
 
     </div>
@@ -124,27 +119,25 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">FOODiFINDER</h5>
+                <p class="grey-text text-lighten-4">We hope you enjoyed your experience with FOODiFINDER.</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">FAVORITE LINKS</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nutritionix.com/business/api">Nutritionix API</a></li><br>
+                  <li><a class="grey-text text-lighten-3" href="http://www.google.com/mapsapi">Google Maps API</a></li><br>
+                  <li><a class="grey-text text-lighten-3" href="http://materializecss.com/">Materialize</a></li><br>
+                  <li><a class="grey-text text-lighten-3" href="https://www.google.com/fonts">Google Fonts</a></li><br>
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            Copyright 2016 
             </div>
           </div>
 </footer>
-
 </body>
 </html>

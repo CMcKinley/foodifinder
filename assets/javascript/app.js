@@ -207,7 +207,7 @@ $('body').on('click','#search', function(e){
 	
 		app.getNutrition(app.searchTerm);
 		app.search = true;
-		$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a><a class="waves-effect waves-light btn-large txtbtn red darken-4" id="restore">Restore</a>');
+		$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Show only '+ app.searchTerm +'</a><a class="waves-effect waves-light btn-large txtbtn red darken-4" id="restore">Show All</a>');
 	}
 	else{
 		//alert('Help!');

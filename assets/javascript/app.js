@@ -10,39 +10,42 @@ var app = {
 	searchTerm:undefined,
 	markers: [],
 	login: function(){
-	
-	var provider = new firebase.auth.GoogleAuthProvider();
-	firebase.auth().signInWithPopup(provider).then(function(result) {
-	// This gives you a Google Access Token. You can use it to access the Google API.
-		var token = result.credential.accessToken;
-		console.log(token);
-		// The signed-in user info.
-		app.user = result.user;
-		console.log(app.user);
-		console.log(app.user.uid);
-		firebase.auth().onAuthStateChanged(function(user) {
-		if (app.user) {
-			userid = app.user.uid
-		$('#auth').html('<a class="waves-effect waves-light btn txtbtn red darken-4" id="logout">Logout</a>')
-			} else {
-			userid = null;
-			}
-			
-	console.log(userid);
-	})
+	return new Promise(function(resolved, rejected){
+		var provider = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup(provider).then(function(result) {
+		// This gives you a Google Access Token. You can use it to access the Google API.
+			var token = result.credential.accessToken;
+			console.log(token);
+			// The signed-in user info.
+			app.user = result.user;
+			resolved();
+			console.log(app.user);
+			console.log(app.user.uid);
+			firebase.auth().onAuthStateChanged(function(user) {
+			if (app.user) {
+				userid = app.user.uid
+				
+				} else {
+				userid = null;
+				rejected();
+				}
+				
+		console.log(userid);
+		})
 
-    // ...
-	}).catch(function(error) {
-    // Handle Errors here.
-	  var errorCode = error.code;
-	  var errorMessage = error.message;
-	  // The email of the user's account used.
-	  var email = error.email;
-	  // The firebase.auth.AuthCredential type that was used.
-	  var credential = error.credential;
-	  // ...
-	});
-	$('form').html('<div class="row center"><div class="input-field col l4 push-l4 m8 push-m2 s10 push-s1"><input id="user_food" type="text" class="validate" required="" aria-required="true"><label for="user_food">Search</label></div><div class="input-field col s12"><button id="search" class="waves-effect waves-light btn-large txtbtn red darken-4" type="submit" name="action" value="Submit">Submit</button></div></div>');
+	    // ...
+		}).catch(function(error) {
+	    // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  // The email of the user's account used.
+		  var email = error.email;
+		  // The firebase.auth.AuthCredential type that was used.
+		  var credential = error.credential;
+		  // ...
+		});
+		
+	})
 
 
 
@@ -184,7 +187,14 @@ $('body').on('click', '#restore', function(){
 
 //click function logs  user in with google
 $('body').on('click', '#login', function(){
-	app.login();
+	app.login().then(function(){
+		$('#auth').html('<a class="waves-effect waves-light btn txtbtn red darken-4" id="logout">Logout</a>')
+		$('form').html('<div class="row center"><div class="input-field col l4 push-l4 m8 push-m2 s10 push-s1"><input id="user_food" type="text" class="validate" required="" aria-required="true"><label for="user_food">Search</label></div><div class="input-field col s12"><button id="search" class="waves-effect waves-light btn-large txtbtn red darken-4" type="submit" name="action" value="Submit">Submit</button></div></div>')
+	}, function(){
+		console.log('login failed');
+	});
+
+	
 });
 
 //click function logs user out

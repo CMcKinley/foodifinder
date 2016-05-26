@@ -27,6 +27,9 @@
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -62,6 +65,7 @@
           <h5 class="subhead header col s12 light grey-text">Share your location with other food finders</h5>
         </div>
 
+
     <!--form with main button and input field-->
     <form class="col s12">
         	<div class="row center">
@@ -74,12 +78,44 @@
 
         	</div>
         <br><br>
+</div>
+<!--</div>-->
+<!-- MODAL Stuff below-->
+
+<!-- Modal -->
+      <div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
+         aria-labelledby = "myModalLabel" aria-hidden = "true">
+         
+         <div class = "modal-dialog">
+            <div class = "modal-content">
+               
+                  <div class = "modal-header">
+                      <h4 class = "modal-title" id = "myModalLabel">
+                         Alert!
+                      </h4>
+                  </div>
+                
+                <div class = "modal-body">
+                    Please enter a food item to search!
+                </div>
+               
+                <div class = "modal-footer">
+                    <br><button type = "button" class = "btn txtbtn cButton" data-dismiss = "modal">X</button>
+                  
+                </div>
+               
+            </div><!-- /.modal-content -->
+         </div><!-- /.modal-dialog -->
+        
+      </div><!-- /.modal --><br>
 	 </form>
 
-     </div>
-    
-   
-  <!--</div>-->
+  
+
+   <!-- Button trigger modal -->
+      
+
+  
 
 <!--Nutrition Facts and Map divs-->
 <div class="container foodfacts">

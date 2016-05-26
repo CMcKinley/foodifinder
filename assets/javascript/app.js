@@ -210,9 +210,9 @@ $('body').on('click','#search', function(e){
 		$('#markers').html('<a class="waves-effect waves-light btn-large txtbtn red darken-4" id="filter">Fliter</a><a class="waves-effect waves-light btn-large txtbtn red darken-4" id="restore">Restore</a>');
 	}
 	else{
-
-
-
+		//alert('Help!');
+		$('#myModal').modal('show', {backdrop: true})
+		 
 
 	}
 

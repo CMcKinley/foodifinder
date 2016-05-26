@@ -181,3 +181,7 @@ input {
   background-color: white !important;
   color: grey !important;
 }
+
+#filter{
+  margin-right:20px;
+}

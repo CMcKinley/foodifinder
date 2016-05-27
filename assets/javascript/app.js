@@ -145,7 +145,7 @@ app.appRef.on("child_added", function(snapshot){
 $('#mark').on('click', function(){
 	if(app.search){
 		if (app.user){
-		app.mark(app.user.displayName,app.lat,app.long);
+		app.mark(app.user.displayName,app.lat,app.long,app.searchTerm);
 		app.appRef.push({username:app.user.displayName,
 					  lat:app.lat,
 					  long:app.long,
